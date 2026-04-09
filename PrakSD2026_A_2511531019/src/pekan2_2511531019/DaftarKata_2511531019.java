@@ -25,6 +25,7 @@ public class DaftarKata_2511531019 {
 	public String get(int index) {
 		return data.get(index);
 	}
+	@Override
 	public String toString() {
 		return data.toString();
 	}
