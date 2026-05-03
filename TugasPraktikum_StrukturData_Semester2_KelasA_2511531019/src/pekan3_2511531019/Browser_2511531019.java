@@ -65,6 +65,7 @@ public class Browser_2511531019 {
 				break;
 			default:
 				System.out.println("Pilihan tidak valid.");
+				break;
 			}
 		} while (choice_1019 != 4);
 		scannerInput_1019.close();
