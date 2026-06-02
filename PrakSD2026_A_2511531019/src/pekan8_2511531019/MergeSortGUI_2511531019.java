@@ -19,6 +19,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 public class MergeSortGUI_2511531019 extends JFrame {
@@ -116,6 +117,13 @@ public class MergeSortGUI_2511531019 extends JFrame {
 		// Event Reset
 		resetButton_1019.addActionListener(e -> reset());
 
+	}
+	
+	public static void main(String[] args) {
+	    SwingUtilities.invokeLater(() -> {
+	        MergeSortGUI_2511531019 gui = new MergeSortGUI_2511531019();
+	        gui.setVisible(true);
+	    });
 	}
 
 	private void setArrayfromInput() {

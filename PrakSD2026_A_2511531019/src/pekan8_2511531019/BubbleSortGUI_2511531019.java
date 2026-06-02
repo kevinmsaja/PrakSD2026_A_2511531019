@@ -18,6 +18,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 public class BubbleSortGUI_2511531019 extends JFrame {
@@ -102,6 +103,13 @@ public class BubbleSortGUI_2511531019 extends JFrame {
 		// Event Reset
 		resetButton_1019.addActionListener(e -> reset());
 	}
+	
+	public static void main(String[] args) {
+	    SwingUtilities.invokeLater(() -> {
+	        BubbleSortGUI_2511531019 gui = new BubbleSortGUI_2511531019();
+	        gui.setVisible(true);
+	    });
+	}
 
 	private void reset() {
 		// TODO Auto-generated method stub
@@ -130,29 +138,29 @@ public class BubbleSortGUI_2511531019 extends JFrame {
 
 	    StringBuilder stepLog_1019 = new StringBuilder();
 
-	    labelArray_1019[i_1019].setBackground(Color.CYAN);
-	    labelArray_1019[i_1019 + 1].setBackground(Color.CYAN);
+	    labelArray_1019[j_1019].setBackground(Color.CYAN);
+	    labelArray_1019[j_1019 + 1].setBackground(Color.CYAN);
 
-	    if (array_1019[i_1019] > array_1019[i_1019 + 1]) {
+	    if (array_1019[j_1019] > array_1019[j_1019 + 1]) {
 	        // Swap
-	        int temp_1019 = array_1019[i_1019];
-	        array_1019[i_1019] = array_1019[i_1019 + 1];
-	        array_1019[i_1019 + 1] = temp_1019;
+	        int temp_1019 = array_1019[j_1019];
+	        array_1019[j_1019] = array_1019[j_1019 + 1];
+	        array_1019[j_1019 + 1] = temp_1019;
 
-	        labelArray_1019[i_1019].setBackground(Color.RED);
-	        labelArray_1019[i_1019 + 1].setBackground(Color.RED);
+	        labelArray_1019[j_1019].setBackground(Color.RED);
+	        labelArray_1019[j_1019 + 1].setBackground(Color.RED);
 
 	        stepLog_1019.append("Langkah ").append(stepCount_1019)
 	               .append(": Menukar elemen ke-")
-	               .append(i_1019).append(" (")
-	               .append(array_1019[i_1019 + 1]).append(") dengan ke-")
-	               .append(i_1019 + 1).append(" (")
+	               .append(j_1019).append(" (")
+	               .append(array_1019[j_1019 + 1]).append(") dengan ke-")
+	               .append(j_1019 + 1).append(" (")
 	               .append(array_1019[i_1019]).append(")\n");
 	    } else {
 	        stepLog_1019.append("Langkah ").append(stepCount_1019)
 	               .append(": Tidak ada pertukaran antara ke-")
-	               .append(i_1019).append(" dan ke-")
-	               .append(i_1019 + 1).append("\n");
+	               .append(j_1019).append(" dan ke-")
+	               .append(j_1019 + 1).append("\n");
 	    }
 
 	    stepLog_1019.append("Hasil: ")
